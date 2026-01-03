@@ -24,7 +24,7 @@ class NotePolicy
     }
 
     /**
-     * Determine whether the user can delete the model.
+     * Determine whether the user can archive the model.
      */
     public function archive(User $user, Note $note): bool
     {
