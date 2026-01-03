@@ -1,2 +1,0 @@
-# LaraNote
-Boring CRUD app
