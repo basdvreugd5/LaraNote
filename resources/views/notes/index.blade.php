@@ -9,19 +9,21 @@
         @endif
 
         {{-- Create note --}}
-        <form method="POST" action="{{ route('notes.store') }}" class="bg-white p-4 rounded shadow space-y-3">
+        <form method="POST" action="{{ route('notes.store') }}"
+            class="border-zinc-200 bg-zinc-50 dark:border-zinc-700 dark:bg-zinc-900 p-4 rounded-xl shadow space-y-3">
             @csrf
 
             <div>
                 <input type="text" name="title" placeholder="Note title" value="{{ old('title') }}"
-                    class="w-full border rounded px-3 py-2">
+                    class="w-full border rounded px-3 py-2 bg-white dark:bg-zinc-800 dark:border-zinc-700">
                 @error('title')
                     <p class="text-sm text-red-600">{{ $message }}</p>
                 @enderror
             </div>
 
             <div>
-                <textarea name="body" placeholder="Optional note content" class="w-full border rounded px-3 py-2">{{ old('body') }}</textarea>
+                <textarea name="body" placeholder="Optional note content"
+                    class="bg-white dark:bg-zinc-800 dark:border-zinc-700 w-full border rounded-xl px-3 py-2">{{ old('body') }}</textarea>
             </div>
 
             <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded">
@@ -32,7 +34,8 @@
         {{-- Notes list --}}
         <div class="space-y-4">
             @forelse ($notes as $note)
-                <div class="bg-white p-4 rounded shadow space-y-3">
+                <div
+                    class="border-zinc-200 bg-zinc-50 dark:border-zinc-700 dark:bg-zinc-900 p-4 rounded-xl shadow space-y-3">
 
                     {{-- Update --}}
                     <form method="POST" action="{{ route('notes.update', $note) }}" class="space-y-2">
@@ -40,9 +43,9 @@
                         @method('PATCH')
 
                         <input type="text" name="title" value="{{ $note->title }}"
-                            class="w-full border rounded px-3 py-2">
+                            class="w-full border rounded px-3 py-2 bg-white dark:bg-zinc-800 dark:border-zinc-700">
 
-                        <textarea name="body" class="w-full border rounded px-3 py-2">{{ $note->body }}</textarea>
+                        <textarea name="body" class="w-full border rounded px-3 py-2 bg-white dark:bg-zinc-800 dark:border-zinc-700">{{ $note->body }}</textarea>
 
                         <button type="submit" class="text-sm text-blue-600 hover:underline active:font-bold">
                             Save
