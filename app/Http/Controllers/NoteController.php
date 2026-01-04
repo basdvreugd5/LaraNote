@@ -5,17 +5,20 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreNoteRequest;
 use App\Http\Requests\UpdateNoteRequest;
 use App\Models\Note;
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
 
 class NoteController extends Controller
 {
+    use AuthorizesRequests;
+
     public function index(): View
     {
         $notes = Note::forUser(auth()->user())
             ->active()
             ->latest()
-            ->paginate(10);
+            ->paginate(5);
 
         return view('notes.index', compact('notes'));
     }
