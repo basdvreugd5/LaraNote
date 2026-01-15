@@ -1,8 +1,10 @@
 # LaraNote
 
-A small, end‑to‑end Laravel 12 application that demonstrates **core framework fundamentals**: authentication, authorization, validation, testing, and clean MVC structure — without unnecessary abstractions.
+LaraNote is a small Laravel 12 application built as a **clean, idiomatic reference project**.
 
-This project was intentionally kept simple to clearly show *how Laravel is meant to be used*.
+It demonstrates how I approach Laravel applications today: by leaning on the framework’s conventions, keeping responsibilities clearly separated, and avoiding abstractions unless they are genuinely required.
+
+This repository is intended to be the **primary portfolio example** of my Laravel work, prioritizing clarity, correctness, and maintainability over architectural experimentation or feature breadth.
 
 ---
 
